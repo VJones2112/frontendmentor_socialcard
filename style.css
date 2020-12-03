@@ -1,6 +1,6 @@
 
-.attribution { font-size: 11px; text-align: center; color: #fff;}
-.attribution a { color: #fff; }
+.attribution { font-size: 11px; text-align: center; color: hsl(0, 0%, 100%); position: relative; top: 15px; border: 1px solid red;}
+.attribution a { color: hsl(0, 0%, 100%); }
 
 * {
     padding: 0;
@@ -8,42 +8,54 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
     background-repeat: no-repeat, no-repeat;
     background-position: -100% 240%, 200% -100%;
     background-color: hsl(185, 75%, 39%);
-/*    background-blend-mode: color-burn;*/
+    background-size: contain;/*  NOT MINE*/
     height: 100vh;
-    width: 400px;
+/*    width: 380px;*/
+/*    width: 100vw;  NOT MINE*/
     text-align: center;
     margin: 0 auto;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 18px;
     color: hsl(0, 0%, 59%);
+    overflow: hidden; /*  NOT MINE*/
 }
 
 .profile__card {
     display: flex;
     flex-direction: column;
-    height: 58vh;
-    width: 70%;
+    height: 375px;
     border-radius: 10px;
-    margin: 125px auto 10px auto;
     background-color: #fff;
-    box-shadow: 3px 4px 15px 5px hsl(0, 0%, 59%);
+    box-shadow: 0 4px 5px 1px hsl(185, 75%, 39%);
+/*    border: 2px solid red;*/
+    /*  ALL BELOW NOT MINE*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+/*    padding: 0;*/
 }
 
 .profile__card--top {
-    background-image: url(images/bg-pattern-card.svg);
+    background: url(images/bg-pattern-card.svg) no-repeat center;
+    background-size: cover;
 /*    background-repeat: no-repeat;*/
-    background-color: hsl(185, 75%, 39%);
+/*    background-color: hsl(185, 75%, 39%);*/
 /*    background-blend-mode: overlay;*/
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    padding: 50px;
+    padding: 60px;
 /*    flex: 1 1 37%;*/
 /*    height: 37%;*/
+/*    border: 2px solid red;*/
 }
 
 .profile__card--image {
@@ -57,30 +69,34 @@ body {
 }
 
 .profile__card--middle {
-/*    flex: 1 1 10%;*/
     border-bottom: 1px solid #d0d0d0;
     display: flex;
     flex-direction: column;
-    height: 40px;
-/*    border: 2px solid red;*/
+    height: 100px;
+/*    border: 2px solid green;*/
+    position: relative;
+    top: -40px;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile__card--middle p { 
-    position: relative;
-    top: -30px;
-    line-height: 150%;
+/*    position: relative;*/
+/*    top: -30px;*/
+/*    line-height: 150%;*/
 /*    border: 1px solid red;*/
-/*    padding-bottom: 10px;*/
-
 }
 
 .profile__card--bottom {
+/*    border: 1px solid red;*/
     display: flex;
-/*    flex: 0 0 30%;*/
+    flex: 1;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    height: 85px;
+/*    padding: 0;*/
+    height: 75px;
+        position: relative;
+    top: -10px;
 /*    margin: auto auto;*/
 /*    margin-top: 2px;*/
 /*    line-height: 120%;*/
@@ -97,7 +113,7 @@ body {
 }
 
 .small {
-    font-size: 14px;
+    font-size: 13px;
     display: block;
     line-height: 200%;
     letter-spacing: 1px;
@@ -105,8 +121,31 @@ body {
 
 
 /*Mobile Screen*/
-@media screen and (max-width: 500px) {
+/*
+@media screen and (max-width: 550px) {
     body {
-        background-position: 130% 230%, -30% -80%;
+        background-position: 135% 230%, -30% -85%;
+        background-attachment: fixed;
     }
 }
+
+@media screen and (max-width: 650px) {
+    body {
+        background-position: 145% 230%, -50% -85%;
+        background-attachment: fixed;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    body {
+        background-position: 210% 250%, -110% -125%;
+        background-attachment: fixed;
+    }
+}
+
+@media screen and (max-width: 2050px) {
+    body {
+        background-position: -10% 450%, 100% -225%;
+        background-attachment: fixed;
+    }
+}*/
