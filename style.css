@@ -1,5 +1,5 @@
 
-.attribution { font-size: 11px; text-align: center; color: hsl(0, 0%, 100%); position: relative; top: 15px; border: 1px solid red;}
+.attribution { font-size: 11px; text-align: center; color: hsl(0, 0%, 100%); position: relative; top: 15px; }
 .attribution a { color: hsl(0, 0%, 100%); }
 
 * {
@@ -11,101 +11,79 @@
 
 
 body {
-    background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
     background-repeat: no-repeat, no-repeat;
     background-position: -100% 240%, 200% -100%;
     background-color: hsl(185, 75%, 39%);
-    background-size: contain;/*  NOT MINE*/
     height: 100vh;
-/*    width: 380px;*/
-/*    width: 100vw;  NOT MINE*/
     text-align: center;
     margin: 0 auto;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 18px;
     color: hsl(0, 0%, 59%);
-    overflow: hidden; /*  NOT MINE*/
+    overflow: hidden;   /*NOT MINE*/
+}
+
+body::before, body::after {
+    position: absolute;
+    content: '';
+    width: 100vw;
+    height: 100vh;
+}
+body::before {
+    background: url(images/bg-pattern-top.svg) no-repeat bottom right;
+    top:-20%;
+    left:-50%;
+}
+body::after {
+    background: url(images/bg-pattern-bottom.svg) no-repeat top left;
+    top: 40%;
+    left: 40%;
 }
 
 .profile__card {
-    display: flex;
-    flex-direction: column;
-    height: 375px;
+    height: 355px;;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 4px 5px 1px hsl(185, 75%, 39%);
-/*    border: 2px solid red;*/
-    /*  ALL BELOW NOT MINE*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-/*    padding: 0;*/
+    z-index: 999;
 }
 
 .profile__card--top {
     background: url(images/bg-pattern-card.svg) no-repeat center;
     background-size: cover;
-/*    background-repeat: no-repeat;*/
-/*    background-color: hsl(185, 75%, 39%);*/
-/*    background-blend-mode: overlay;*/
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 60px;
-/*    flex: 1 1 37%;*/
-/*    height: 37%;*/
-/*    border: 2px solid red;*/
+    height: 140px;
 }
 
-.profile__card--image {
+.profile__card--image{
     border-radius: 50%;
     height: auto;
-    width: 35%;
+    width: 30%;
     border: 5px solid #fff;
     position: relative;
     top: -50px;
-    margin: 0 auto;
 }
 
 .profile__card--middle {
     border-bottom: 1px solid #d0d0d0;
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-/*    border: 2px solid green;*/
-    position: relative;
-    top: -40px;
-    align-items: center;
-    justify-content: center;
+    height: 140px;
 }
 
-.profile__card--middle p { 
-/*    position: relative;*/
-/*    top: -30px;*/
-/*    line-height: 150%;*/
-/*    border: 1px solid red;*/
-}
+.profile__card--middle p { margin-top: -40px; }
 
 .profile__card--bottom {
-/*    border: 1px solid red;*/
     display: flex;
-    flex: 1;
     justify-content: space-around;
     align-items: center;
-/*    padding: 0;*/
     height: 75px;
-        position: relative;
-    top: -10px;
-/*    margin: auto auto;*/
-/*    margin-top: 2px;*/
-/*    line-height: 120%;*/
-/*    height: 320px;*/
-/*    height: 25%;*/
 }
-
-
-/*.profile__card--bottom p { margin-top: 5px;}*/
 
 .strong {
     font-weight: 700;
@@ -118,34 +96,3 @@ body {
     line-height: 200%;
     letter-spacing: 1px;
 }
-
-
-/*Mobile Screen*/
-/*
-@media screen and (max-width: 550px) {
-    body {
-        background-position: 135% 230%, -30% -85%;
-        background-attachment: fixed;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    body {
-        background-position: 145% 230%, -50% -85%;
-        background-attachment: fixed;
-    }
-}
-
-@media screen and (max-width: 1050px) {
-    body {
-        background-position: 210% 250%, -110% -125%;
-        background-attachment: fixed;
-    }
-}
-
-@media screen and (max-width: 2050px) {
-    body {
-        background-position: -10% 450%, 100% -225%;
-        background-attachment: fixed;
-    }
-}*/
